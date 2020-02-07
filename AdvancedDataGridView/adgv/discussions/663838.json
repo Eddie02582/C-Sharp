@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1498171",
+    "ThreadId": "663838",
+    "Html": "I'm trying to use auto-generated advancedDataGrid.<br />\nProblem is that the below shown procedure does not succeed with updating the SQL table every time... It is exactly every second Event raised... If I edit cell for the first (3rd, 5th, etc.) time (CellEndEdit event raised every time, current data picked) - SQL Table cell is not updated. It updates when I edit the DataGrid cell for the second (4th, 6th, etc.) time.<br />\n<pre><code>private void advancedDataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)\n    {\n        int rowIdx = advancedDataGridView1.CurrentCell.RowIndex;\n        DataRowView drv = (DataRowView)advancedDataGridView1.Rows[rowIdx].DataBoundItem;\n        DataRow dr = drv.Row;\n        this.levTableAdapter.Update(dr); //strange, but Update is done every second time....\n    }</code></pre>\n\nHow to debug it?<br />\n<br />\nEDIT: Looked into behaviour again and I have to update:<br />\n<br />\n1st enter &quot;A&quot; - noChangeSQL, Event picks &quot;A&quot;, &quot;A&quot; in the datagrid cell.<br />\n2nd enter &quot;B&quot; -  &quot;A&quot; in SQL, Event picks &quot;A&quot;, &quot;A&quot; in cell.<br />\n3rd enter &quot;C&quot; -  &quot;A&quot; in SQL, Event picks &quot;C&quot;, &quot;C&quot; in cell.<br />\n4rd enter &quot;D&quot; -  &quot;C&quot; in SQL, Event picks &quot;C&quot;, &quot;C&quot; in cell.<br />\n5th enter &quot;E&quot; -  &quot;C&quot; in SQL, Event picks &quot;E&quot;, &quot;E&quot; in cell.<br />\n",
+    "PostedDate": "2017-10-01T08:51:47.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1498174",
+    "ThreadId": "663838",
+    "Html": "I just got the answer somewhere else, but I post it here, to have a complete solution: <a href=\"https://stackoverflow.com/questions/46513792/adgv-c-sharp-datagridview-update-query-bug\" rel=\"nofollow\">https://stackoverflow.com/questions/46513792/adgv-c-sharp-datagridview-update-query-bug</a><br />\n<pre><code>        private void advancedDataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)\n        {\n            int rowIdx = advancedDataGridView1.CurrentCell.RowIndex;\n            DataRowView drv = (DataRowView)advancedDataGridView1.Rows[rowIdx].DataBoundItem;\n            DataRow dr = drv.Row;\n            BeginInvoke((Action)(() =&gt; SaveRowChanges(dr)));\n         }\n\n        private void SaveRowChanges(DataRow dr)\n        {\n            DataRow[] rows = { dr };\n            this.levTableAdapter.Update(rows);\n         }</code></pre>\n\n",
+    "PostedDate": "2017-10-01T10:44:18.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

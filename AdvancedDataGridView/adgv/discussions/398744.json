@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "924352",
+    "ThreadId": "398744",
+    "Html": "\r\n<p>Do you need it?</p>\r\n",
+    "PostedDate": "2012-10-09T16:55:03.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1071108",
+    "ThreadId": "398744",
+    "Html": "English?<br />\n",
+    "PostedDate": "2013-07-22T00:24:42.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1105318",
+    "ThreadId": "398744",
+    "Html": "Please, on English if possible and then I can translate to Croatian/Bosnian/Serbian maybe German and Slovenian also...<br />\n",
+    "PostedDate": "2013-10-08T23:19:35.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130081",
+    "ThreadId": "398744",
+    "Html": "I've done some localisation work on this... and have submitted it.  So if zubyme gets some time he might pull my changes into the online version.\r<br />\n<br />\nMy changes include a default English language, plus the Russian language that Zubyme already had.  Because it uses the resx form of localisation it should be quite trivial for anyone to add additional languages.  They can just copy-paste an existing language resx, do the translation and make sure to specify the locale (ie en-GB, en-US, ru-RU, de-DE etc) in the filename when saving.. when compiled it will automatically create the appropriate language folder in the output path, along with the compiled language resource .dll<br />\n",
+    "PostedDate": "2013-11-28T12:38:28.183-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130187",
+    "ThreadId": "398744",
+    "Html": "<strong>BevanWeiss wrote:</strong><br />\n<blockquote>\nI've done some localisation work on this... and have submitted it.  So if zubyme gets some time he might pull my changes into the online version.<br />\n<br />\nMy changes include a default English language, plus the Russian language that Zubyme already had.  Because it uses the resx form of localisation it should be quite trivial for anyone to add additional languages.  They can just copy-paste an existing language resx, do the translation and make sure to specify the locale (ie en-GB, en-US, ru-RU, de-DE etc) in the filename when saving.. when compiled it will automatically create the appropriate language folder in the output path, along with the compiled language resource .dll<br />\n</blockquote>\nYes. please send me you translate\r<br />\nit will be included in 1.0.6 <br />\n",
+    "PostedDate": "2013-11-29T01:01:28.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130200",
+    "ThreadId": "398744",
+    "Html": "I've uploaded it to the 'Source Code'-&gt;'Patch' area within this site.\r<br />\nIt should be usable as-is, and I've already added in the localisation stuff to it.\r<br />\n<br />\nI've added some silly additional icons for the various filter conditions which could probably be thrown out (since these differ from Excel).\r<br />\nI did include an unneeded file in the project however... but I can't remember the name of it now.  At the top of the project tree.<br />\n",
+    "PostedDate": "2013-11-29T01:30:04.42-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1143749",
+    "ThreadId": "398744",
+    "Html": "I've upload a patch with the resources file for fr-FR localization.<br />\n",
+    "PostedDate": "2013-12-29T14:23:17.703-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1143765",
+    "ThreadId": "398744",
+    "Html": "Thanks, DCourtel!<br />\n",
+    "PostedDate": "2013-12-29T16:05:04.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1144385",
+    "ThreadId": "398744",
+    "Html": "The French localization works fine in the last release (NY Edition). Thanks.<br />\n",
+    "PostedDate": "2014-01-01T05:26:54.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1313818",
+    "ThreadId": "398744",
+    "Html": "A real awesome job, thanks for your sharing<br />\n",
+    "PostedDate": "2014-10-15T20:49:22.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1431839",
+    "ThreadId": "398744",
+    "Html": "yerelleştirme nasıl yapılıyor peki örnek var mı<br />\n",
+    "PostedDate": "2015-06-25T06:54:35.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1431841",
+    "ThreadId": "398744",
+    "Html": "Do you have an example of how much is being done localization<br />\n",
+    "PostedDate": "2015-06-25T06:55:02.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1431924",
+    "ThreadId": "398744",
+    "Html": "Hi!\r<br />\nIf want to know how to do translate, use this post\r<br />\n<strong>BevanWeiss wrote:</strong><br />\n<blockquote>\nI've done some localisation work on this... and have submitted it.  So if zubyme gets some time he might pull my changes into the online version.<br />\n<br />\nMy changes include a default English language, plus the Russian language that Zubyme already had.  Because it uses the resx form of localisation it should be quite trivial for anyone to add additional languages.  They can just copy-paste an existing language resx, do the translation and make sure to specify the locale (ie en-GB, en-US, ru-RU, de-DE etc) in the filename when saving.. when compiled it will automatically create the appropriate language folder in the output path, along with the compiled language resource .dll<br />\n</blockquote>\n",
+    "PostedDate": "2015-06-25T18:18:51.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

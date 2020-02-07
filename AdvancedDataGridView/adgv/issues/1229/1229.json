@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "fixed in v1.0.6",
+    "ClosedDate": "2013-12-30T18:31:12.373-08:00",
+    "CommentCount": 3,
+    "Custom": "",
+    "Description": "Hello \n\nFilter not Available on Date & Time.\n\nAnd Date Filter is not working properly.",
+    "LastUpdatedDate": "2013-12-30T18:31:12.373-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2013-05-24T07:02:35.123-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Filter Not available on DateTime",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1229
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "HelloWhats wrong with Date Filter? Can you give sample data for filtering?\r\n\r\n",
+      "PostedDate": "2013-06-03T18:10:17.333-07:00",
+      "Id": 184344
+    },
+    {
+      "Message": "Yes Data AND Time work inccorect because i dont need time in my application",
+      "PostedDate": "2013-11-29T00:59:01.56-08:00",
+      "Id": 184345
+    },
+    {
+      "Message": "Date&Time support added in v1.0.6",
+      "PostedDate": "2013-12-30T18:30:56.507-08:00",
+      "Id": 184346
+    }
+  ]
+}

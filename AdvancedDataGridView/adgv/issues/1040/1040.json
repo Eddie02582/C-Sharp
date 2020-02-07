@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "On date columns when drilling down into month same day shows up many times.",
+    "LastUpdatedDate": "2013-02-13T19:53:18.227-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2012-10-23T07:38:13.463-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Date filtering not showing distinct dates",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 1040
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1456759,
+      "FileName": "RepeateadDay.jpg",
+      "DownloadUrl": ".\\1456759"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Do you have this error in not-modified code?Can you show whats DateTime objects you insert into datagridview for this september 20`s days?",
+      "PostedDate": "2012-10-29T00:56:28.477-07:00",
+      "Id": 184334
+    }
+  ]
+}

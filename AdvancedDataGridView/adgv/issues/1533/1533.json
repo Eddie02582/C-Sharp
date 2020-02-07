@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "In Excel there is also a Textbox above the TreeView in the FilterMenu Popup which allows filtering the items displayed in the TreeView.\nWhould it be possible to implement a TextBox with this function?",
+    "LastUpdatedDate": "2015-02-12T17:05:38.457-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2015-02-11T08:16:41.563-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Search TextBox for TreeView in FilterMenu",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1533
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "try to do it in the release after next",
+      "PostedDate": "2015-02-12T17:05:38.457-08:00",
+      "Id": 184402
+    }
+  ]
+}

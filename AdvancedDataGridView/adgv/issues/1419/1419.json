@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "If column is partially show because of scrollbar position,  filterButtonImageBounds.Contains in OnMouseDown does not accurately  position mousedown region.  FilterPopup does not get called.  \n\nThe mousedown region has shifted as show in the attached image.",
+    "LastUpdatedDate": "2014-05-26T20:34:37.817-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2014-05-23T13:03:03.25-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "filterButtonImageBounds error with scrollbar",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1419
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1456764,
+      "FileName": "2014-05-23 12_59_36-Greenshot.png",
+      "DownloadUrl": ".\\1456764"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Fix:In GetFilterBounds change:  cell.Width  to  this.DataGridView.Columns[this.DataGridView.CurrentCell.ColumnIndex].Width\r\n\r\nto get the actual width if cell is partially visible.\r\n\r\n",
+      "PostedDate": "2014-05-26T15:17:22.187-07:00",
+      "Id": 184384
+    },
+    {
+      "Message": "yes, i do so but \"cell.Width\"  replace \"with this.OwningColumn.Width\"\r\n\r\nneed to include fix into next release",
+      "PostedDate": "2014-05-26T20:33:55.173-07:00",
+      "Id": 184385
+    }
+  ]
+}

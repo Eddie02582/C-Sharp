@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1497779",
+    "ThreadId": "663632",
+    "Html": "Hi everyone,<br />\n<br />\nI would like to consult you about something I could not find on the Internet. A few days ago, I started to use &quot;Advanced DataGridView with Excel-like Auto Filter&quot; in my project.<br />\n<br />\nIt works absolutely great in terms of filtering and sorting the data which is coming from a non-encrypted access database. <br />\n<br />\nHowever, today I decided to encrypt the same database and then when I started the codein Microsoft Visual Studio 2017, it gave an error as follows; <br />\n<br />\nSystem.Data.OleDb.OleDbException: 'Invalid Password.'<br />\n<br />\nI must put the password inside the following code, but I could not manage it beacuse I don't know how to place a password code inside it.<br />\n<br />\n<br />\n// TODO: This line of code loads data into the 'dENEMEDataSet.Tablo1' table<br />\nthis.tablo1TableAdapter.Fill(this.dENEMEDataSet.Tablo1);<br />\n<br />\n<br />\nCan someone please help me on that issue??<br />\n<br />\nNote: dENEME is the name of my access database file and tablo1 is the name of my table in that access file<br />\n",
+    "PostedDate": "2017-08-19T09:56:56.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

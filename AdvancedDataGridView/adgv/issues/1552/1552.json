@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "hi there,\r\n\r\nPlease help me!\r\n\r\nI already instal \r\nAdvanced DataGridView with Excel-like auto filter to my vb.net project, my problem is I don't know how to apply into my existing datagridview",
+    "LastUpdatedDate": "2017-07-18T23:51:08.04-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2016-06-01T02:56:57.63-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "how can I apply \" Advanced DataGridView with Excel-like auto filter\" to my existing Datagridview in  vb.net",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 1552
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

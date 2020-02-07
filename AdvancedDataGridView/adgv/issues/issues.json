@@ -1,0 +1,138 @@
+[
+  {
+    "Id": 1039,
+    "Title": "GUID columns generate errors"
+  },
+  {
+    "Id": 1040,
+    "Title": "Date filtering not showing distinct dates"
+  },
+  {
+    "Id": 1041,
+    "Title": "Date filter by year doesn't work"
+  },
+  {
+    "Id": 1101,
+    "Title": "Exception created mouse at -1 row and column"
+  },
+  {
+    "Id": 1107,
+    "Title": "ColumnHeaderMouseClick code path"
+  },
+  {
+    "Id": 1108,
+    "Title": "Sample code includes type Guid."
+  },
+  {
+    "Id": 1114,
+    "Title": "Node tree blanks after second time clicking OK"
+  },
+  {
+    "Id": 1128,
+    "Title": "filterbutton shown for hidden columns"
+  },
+  {
+    "Id": 1135,
+    "Title": "Filter treeview blanks out."
+  },
+  {
+    "Id": 1228,
+    "Title": "Save/Restore Filter Option  ?"
+  },
+  {
+    "Id": 1229,
+    "Title": "Filter Not available on DateTime"
+  },
+  {
+    "Id": 1302,
+    "Title": "Filtering data when is selected is between"
+  },
+  {
+    "Id": 1335,
+    "Title": "Filter \"Between...\" crash the app due to translation error"
+  },
+  {
+    "Id": 1336,
+    "Title": "Translation missing"
+  },
+  {
+    "Id": 1337,
+    "Title": "InvalidOperationException thrown"
+  },
+  {
+    "Id": 1338,
+    "Title": "An empty row is created when filtering on blanks rows"
+  },
+  {
+    "Id": 1346,
+    "Title": "Filtering on date returns no result when date2 is before date1"
+  },
+  {
+    "Id": 1347,
+    "Title": "Filtering on numbers returns no result when num2 is greater than num1"
+  },
+  {
+    "Id": 1348,
+    "Title": "Feature request: If filter is disabled enable column sorting"
+  },
+  {
+    "Id": 1418,
+    "Title": "Project in visual basic"
+  },
+  {
+    "Id": 1419,
+    "Title": "filterButtonImageBounds error with scrollbar"
+  },
+  {
+    "Id": 1420,
+    "Title": "Make this available as a Nuget Package"
+  },
+  {
+    "Id": 1434,
+    "Title": "Feature request: Provide an easy way of changing the searchToolBarbuttons"
+  },
+  {
+    "Id": 1437,
+    "Title": "Completa Auto Filter"
+  },
+  {
+    "Id": 1492,
+    "Title": "Boolean filter not work with true and false selected"
+  },
+  {
+    "Id": 1530,
+    "Title": "ADGV with Entity Framework and make filters fast"
+  },
+  {
+    "Id": 1531,
+    "Title": "Boolean filter not working for column names that are numbers"
+  },
+  {
+    "Id": 1532,
+    "Title": "Continue filtering after loading saved filters"
+  },
+  {
+    "Id": 1533,
+    "Title": "Search TextBox for TreeView in FilterMenu"
+  },
+  {
+    "Id": 1549,
+    "Title": "Exception thrown when filtering on strings with curly braces."
+  },
+  {
+    "Id": 1550,
+    "Title": "Pre release nuget package for 0.1.1.0 beta"
+  },
+  {
+    "Id": 1551,
+    "Title": "Loading of filters are very slow at quantity over 10000 rows"
+  },
+  {
+    "Id": 1552,
+    "Title": "how can I apply \" Advanced DataGridView with Excel-like auto filter\" to my existing Datagridview in  vb.net"
+  },
+  {
+    "Id": 1553,
+    "Title": "Filtering is returning duplicates"
+  }
+]

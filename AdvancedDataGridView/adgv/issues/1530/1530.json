@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 6,
+    "Custom": "",
+    "Description": "Hi,\nGreat work with the ADGV! :)\n\nI have used the Entity Framework to generate model class from the database. I use this model as the datasource of my ADGV. The model has correct data types for the columns but ADGV does not detect that and shows me text filters for all columns. \n\nTake for example the \"amount_local_netto\" column in the attached images. It has the type \"System.Decimal\" but it shows the Text filter.\n\nI have noticed one thing though. If I deliberately change its column.ValueType property to typeof(decimal) in Designer.cs when the columns are being added, then it shows me the correct filter.\n\nWhat could be the problem here? Also, for too many distinct values in a column, the drop-down shows after a big lag. Do you have any good idea to make that faster?\n\nThank you and I look forward to your response.",
+    "LastUpdatedDate": "2015-02-17T00:39:39.273-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2015-02-04T14:53:13.66-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ADGV with Entity Framework and make filters fast",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1530
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1456765,
+      "FileName": "Capture2.PNG",
+      "DownloadUrl": ".\\1456765"
+    },
+    {
+      "FileId": 1456766,
+      "FileName": "Capture.PNG",
+      "DownloadUrl": ".\\1456766"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "maybe because the type is decimal? ( is the same as Nullable) and not decimal\r\n\r\nin the code the check is  this.DataType == typeof(Decimal)",
+      "PostedDate": "2015-02-11T08:26:12.43-08:00",
+      "Id": 184394
+    },
+    {
+      "Message": "I did the following:\r\n\r\n1. Changed data type of _amount_local_netto_ property to \"decimal\" in the TableName.cs file2. Set Nullable property of _amount_local_netto_ to False in the table model\r\n\r\nDid not work. I also tried adding a check for \"this.DataType == typeof(Nullable)\" in the ADGV source, then rebuilt the DLL and added it to my project again which also did not work. \r\n\r\nIs there anything that you might need from me?\r\n\r\nBest.",
+      "PostedDate": "2015-02-12T05:20:51.32-08:00",
+      "Id": 184395
+    },
+    {
+      "Message": "if you can please send me you source code and some sample data for filtering",
+      "PostedDate": "2015-02-12T17:07:26.953-08:00",
+      "Id": 184396
+    },
+    {
+      "Message": "Hi Zuby,Since the max upload size for an attachment is 4 mb, I cannot upload my project which is 10 mb. I am now sending it to you per email.\r\n\r\nThank you!",
+      "PostedDate": "2015-02-16T02:21:35.533-08:00",
+      "Id": 184397
+    },
+    {
+      "Message": "Infact, it is better that I put it on dropbox with public access. Here's the [link](https://www.dropbox.com/s/hx9ot5hxkebf6b3/ADGVTest.zip?dl=0)Thanks for helping!",
+      "PostedDate": "2015-02-16T02:29:13.76-08:00",
+      "Id": 184398
+    },
+    {
+      "Message": "Thank you. I will post new release as soon as I can![0.1.1.0](https://adgv.codeplex.com/releases/view/611620)",
+      "PostedDate": "2015-02-17T00:39:39.273-08:00",
+      "Id": 184399
+    }
+  ]
+}

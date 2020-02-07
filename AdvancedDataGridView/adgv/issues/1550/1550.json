@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Any chance you could you make a pre release nuget package for 0.1.1.0 beta. \r\nIt would make it easier to try out.\r\n\r\nAnd update the assembly version number.\r\n\r\nAnd sign the assembly.",
+    "LastUpdatedDate": "2015-06-23T04:58:56.143-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2015-06-23T04:58:56.143-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Pre release nuget package for 0.1.1.0 beta",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1550
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

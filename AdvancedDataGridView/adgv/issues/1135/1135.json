@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "fixed in v 0.1.0.2",
+    "ClosedDate": "2013-03-06T07:20:55.857-08:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Using the ADGVSample.exe code, if you open the dropdown filter, then click ok, the open the dropdown filter again the treeview structure is emtpy.  This 100% repeatable.",
+    "LastUpdatedDate": "2013-05-16T01:15:38.037-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2013-03-04T09:17:18.143-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Filter treeview blanks out.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 1135
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "will check",
+      "PostedDate": "2013-03-04T22:41:17.457-08:00",
+      "Id": 184340
+    }
+  ]
+}

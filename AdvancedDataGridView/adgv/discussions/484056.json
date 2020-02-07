@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1150836",
+    "ThreadId": "484056",
+    "Html": "Does the filtering just work with System.Data.DataView or do you know of any other implementations out there that have a comprehensive DataColumn.Expression implementation of the Filter property?\r<br />\n<br />\nI use <a href=\"http://teamjohnston.net/blog/category/objectlistview\" rel=\"nofollow\">http://teamjohnston.net/blog/category/objectlistview</a> in my <a href=\"https://rapiddevbookcode.codeplex.com/wikipage?title=EnumerableDebugVisualizer\" rel=\"nofollow\">https://rapiddevbookcode.codeplex.com/wikipage?title=EnumerableDebugVisualizer</a> which does support DataColumn.Expression filtering, but not, alas, the IN clause you generate.\r<br />\n<br />\n<a href=\"https://cslacontrib.codeplex.com/SourceControl/latest#branches/2010.11.001/Csla2Extensions/ObjectListView/CSharp/ObjectListView.cs\" rel=\"nofollow\">https://cslacontrib.codeplex.com/SourceControl/latest#branches/2010.11.001/Csla2Extensions/ObjectListView/CSharp/ObjectListView.cs</a> might support it since it uses an underlying DataView but I haven tried it yet.\r<br />\n<br />\nJust curious if anyone knows one out there that does.<br />\n",
+    "PostedDate": "2014-01-08T04:30:50.98-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1249837",
+    "ThreadId": "484056",
+    "Html": "you always can create you own sort/filter string<br />\n<pre><code>private void dataGridView_FilterStringChanged(object sender, EventArgs e)\n        {\n               string s = this.dataGridView.FilterString;\n              \n              // you code to format FilterString\n\n               this.bindingSource.Filter = s;\n        }</code></pre>\n\n",
+    "PostedDate": "2014-05-26T22:04:40.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1249889",
+    "ThreadId": "484056",
+    "Html": "<strong>Zubyme wrote:</strong><br />\n<blockquote>\nyou always can create you own sort/filter string<br />\n</blockquote>\nHadn't thought of that, good tip. I ended up implementing the IN clause in my version of the ObjectListView: <a href=\"https://rapiddevbookcode.codeplex.com/SourceControl/latest#LLBL%20Pro\" rel=\"nofollow\">https://rapiddevbookcode.codeplex.com/SourceControl/latest#LLBL%20Pro</a> v4.1/ObjectListView/ObjectListView.csproj (I include the link in case anyone else wants to use the Advanced DataGridView with non-DataTables)\r<br />\n<br />\nBTW Your Advanced DataGridView is in use in my latest <a href=\"https://rapiddevbookcode.codeplex.com/releases/view/120880\" rel=\"nofollow\">Enumerable Debugger Visualizer</a>\r<br />\nThankyou!<br />\n",
+    "PostedDate": "2014-05-27T01:14:13.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "It would be nice if when filtering is disabled then the column headers revert back to standard DataGridViewColumnSortMode.Automatic behavior, i.e. clicking on header sorts and shows sorting glyph.\n\ne.g. when the IBindingListView.SupportsFiltering is false.\n\nGreat work BTW",
+    "LastUpdatedDate": "2014-05-26T21:41:53.787-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2014-01-05T02:38:50.757-08:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Feature request: If filter is disabled enable column sorting",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1348
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "ok, good idea",
+      "PostedDate": "2014-01-05T09:37:34.68-08:00",
+      "Id": 184369
+    },
+    {
+      "Message": "will be in next release",
+      "PostedDate": "2014-05-26T21:40:06.813-07:00",
+      "Id": 184370
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+<div class="wikidoc"><h1>Advanced DataGridView</h1>v1.0.6<br /><u>RU</u> <a href="https://adgv.codeplex.com/documentation?referringTitle=Documentation%20%28RU%29">EN</a>
+<hr />
+<h3>Содержание <a name="сontents"></a></h3><ol><li><a href="#Description">Описание</a></li>
+<li><a href="#How">Инструкция</a></li>
+<li><a href="#Classes">Классы и методы</a></li>
+<li><a href="#Search">SearchToolBar</a></li>
+<li><a href="#Loc">Локализация</a></li>
+<li><a href="#Example">Пример</a></li></ol>
+
+<h3>Описание<a name="Description"></a></h3><a href="#сontents">back</a> <br />
+<h3>Инструкция<a name="How"></a></h3><a href="#сontents">back</a> <br />
+<h3>Классы и методы<a name="Classes"></a></h3><b>AdvancedDataGridView.cs</b><br />Основной класс <div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> AdvancedDataGridView : DataGridView
+</pre></div>Автоматически добавляет фильтр при добавлении нового столбца <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> Boolean AutoGenerateContextFilters {<span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>;}
+</pre></div><br />При фильтрации дат значения часов, минут, секунд и миллисекунд отбрасываются <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> Boolean DateWithTime {<span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>;} 
+</pre></div><br />К дереву дат в фильтре добавляются фильтр часов, минут, секунд, миллисекунд <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> Boolean TimeFilter {<span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>;}
+</pre></div><br />Итоговая строка сортировки<div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> String SortString {<span style="color:Blue;">get</span>; <span style="color:Blue;">private</span> <span style="color:Blue;">set</span>;}
+</pre></div><br />Итоговая строка фильтра <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> String FilterString {<span style="color:Blue;">get</span>; <span style="color:Blue;">private</span> <span style="color:Blue;">set</span>;}
+</pre></div><br />Событие возникает при изменении <i>SortString</i> <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> <span style="color:Blue;">event</span> EventHandler SortStringChanged;
+</pre></div><br />Событие возникает при изменении <i>FilterString</i> <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> <span style="color:Blue;">event</span> EventHandler FilterStringChanged;
+</pre></div><br />Включает фильтр для <i>Column</i> <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> EnableFilter(DataGridViewColumn Column)
+</pre></div><br />Включает фильтр для <i>Column</i> с заданными настройками <i>DateWithTime</i> и <i>TimeFilter</i>, если фильтр уже включен, то только меняет настройки <i>DateWithTime</i> и <i>TimeFilter</i> <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> EnableFilter(DataGridViewColumn Column, Boolean DateWithTime, Boolean TimeFilter)
+</pre></div><br />Скрывает фильтр для <i>Column</i> <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> DisableFilter(DataGridViewColumn Column)
+</pre></div><br />Загружает фильтр и сортировку для таблицы <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> LoadFilter(String Filter, String Sorting = <span style="color:Blue;">null</span>)
+</pre></div><br />Удаляет все сортировки. Если <i>FireEvent = true</i>, то возникает событие <i>SortStringChanged</i> <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> ClearSort(Boolean FireEvent = <span style="color:Blue;">false</span>)
+</pre></div><br />Удаляет все фильтры. Если <i>FireEvent = true</i>, то возникает событие <i>FilterStringChanged</i>  <div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> ClearFilter(Boolean FireEvent = <span style="color:Blue;">false</span>)
+</pre></div><br />Поиск по отфильтрованным ячейкам. 
+<ul><li>Возвращает первую <i>DataGridViewCell</i> у которой <i>FormatedValue</i> совпало с <i>ValueToFind</i>.</li>
+<li><i>ColumnName</i> - имя столбца в котором осуществляется поиск, если <i>null</i>, то поиск по всем столбцам. </li>
+<li><i>ColumnIndex </i> - номер столбца с которого начинать поиск. Если   <i>ColumnIndex!=ColumnName.Index</i>, то поиск начинается со следующей строки. Если <i>ColumnIndex&gt;0</i>  и <i>ColumnName!=null</i>, то поиск идет только в столбцах с <i>Index&gt;ColumnIndex</i>.</li>
+<li><i>isWholeWordSearch</i> - искать слово целиком. </li>
+<li><i>isCaseSensitive</i> - учитывать регистр </li></ul>
+<div style="color:Black;background-color:White;"><pre>
+       <span style="color:Blue;">public</span> DataGridViewCell FindCell(<span style="color:Blue;">string</span> ValueToFind, <span style="color:Blue;">string</span> ColumnName = <span style="color:Blue;">null</span>, <span style="color:Blue;">int</span> RowIndex = 0, <span style="color:Blue;">int</span> ColumnIndex = 0, Boolean isWholeWordSearch = <span style="color:Blue;">true</span>, Boolean isCaseSensitive = <span style="color:Blue;">false</span>)
+</pre></div><br /><b>ADGVColumnHeaderCell.cs</b><br /><i>DataGridViewColumnHeaderCell</i>, который содержит кнопку для фильтра <br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> ADGVColumnHeaderCell : DataGridViewColumnHeaderCell
+</pre></div><br /><i>ADGVFilterMenu</i>, который привязан к <i>DataGridViewColumnHeaderCell</i><br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> ADGVFilterMenu FilterMenu { <span style="color:Blue;">get</span>; <span style="color:Blue;">private</span> <span style="color:Blue;">set</span>; }
+</pre></div><br />Событие возникает когда нажимают на кнопку фильтра<br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> <span style="color:Blue;">event</span> ADGVFilterEventHandler FilterPopup;
+</pre></div><br />Событие возникает когда у привязанного <i>FilterMenu </i> меняется <i>SortString</i><br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> <span style="color:Blue;">event</span> ADGVFilterEventHandler SortChanged;
+</pre></div><br />Событие возникает когда у привязанного  <i>FilterMenu</i> меняется <i>FilterString</i><br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> <span style="color:Blue;">event</span> ADGVFilterEventHandler FilterChanged;
+</pre></div><br />Минимальные размеры ячейки, которые должны быть чтобы хватило места для размещения кнопки фильтра<br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> Size MinimumSize {<span style="color:Blue;">get</span>; }
+</pre></div><br />Активный стиль сортировки <i>FilterMenu</i><br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> ADGVFilterMenuSortType ActiveSortType {<span style="color:Blue;">get</span>; }
+</pre></div><br />Активный тип фильтра <i>FilterMenu</i><br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> ADGVFilterMenuFilterType ActiveFilterType {<span style="color:Blue;">get</span>; }
+</pre></div><br />Итоговая строка сортировки <i>FilterMenu</i><br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> String SortString {<span style="color:Blue;">get</span>; }
+</pre></div><br />Итоговая строка фильтра <i>FilterMenu</i><br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> String FilterString {<span style="color:Blue;">get</span>; }
+</pre></div><br />Включен или нет <i>FilterMenu</i>. Когда фильтр отключен кнопка фильтра не отображается.<br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> Boolean FilterEnabled {<span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>;}
+</pre></div><br />Возвращает или устанавливает <i>FilterMenu.DateWithTime</i><br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> Boolean DateWithTime {<span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>;}
+</pre></div><br />Возвращает или устанавливает <i>FilterMenu.TimeFilter</i><br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> Boolean TimeFilter {<span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>;}
+</pre></div><br />Вызывает SetLoadedFilterMode(Boolean Enabled)<br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> SetLoadedFilterMode(Boolean Enabled)
+</pre></div><br />Конструктор. <i>oldCell</i> -  оригинальная ячейка <i>DataGridViewColumnHeaderCell</i> для замены<br /><div style="color:Black;background-color:White;"><pre>
+        <span style="color:Blue;">public</span> ADGVColumnHeaderCell(DataGridViewColumnHeaderCell oldCell, Boolean FilterEnabled = <span style="color:Blue;">false</span>)
+</pre></div><br /><a href="#сontents">back</a><br />
+<h3>SearchToolBar <a name="Search"></a></h3><a href="#сontents">back</a> <br />
+<h3>Локализация<a name="Loc"></a></h3><a href="#сontents">back</a> <br />
+<h3>Пример <a name="Example"></a></h3><a href="#сontents">back</a> </div><div class="ClearBoth"></div>

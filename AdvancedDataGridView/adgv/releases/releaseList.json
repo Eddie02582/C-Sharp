@@ -1,0 +1,298 @@
+[
+  {
+    "Id": "0",
+    "Name": "0.1.1.0",
+    "DevelopmentStatus": "Beta",
+    "Description": "It`s a prerelease. Please be careful and and give you feedback\n\n*fixed*\n* [workitem:1549]\n* [workitem:1531]\n* [workitem:1492]\n\n*new*\n* ADGVColumnHeaderCellBehavior - allow hide, disable filter/sort\n* ADGVFilterMenuDateTimeGrouping - allow grouping DateTime filter by years, month, days, etc.\n\n*change*\n* save/load filter behavior, look [workitem:1532]\n* some refactoring and code clean",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2015-05-18T19:14:52.577-07:00",
+    "Files": [
+      {
+        "Id": "c069ffbd-feaf-4f42-8b2c-6e991da8713a",
+        "FileName": "ADGV_0.1.1.0_Dll.zip",
+        "Url": "./0/c069ffbd-feaf-4f42-8b2c-6e991da8713a",
+        "Type": "Application",
+        "UploadDate": "2015-05-13T18:59:40.77-07:00"
+      },
+      {
+        "Id": "cf0334ae-94a6-4a3b-a73b-472526cf86df",
+        "FileName": "ADGV_0.1.1.0_Source.zip",
+        "Url": "./0/cf0334ae-94a6-4a3b-a73b-472526cf86df",
+        "Type": "Source Code",
+        "UploadDate": "2015-05-13T18:59:40.833-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "SearchToolBar Control (v1.1)",
+    "DevelopmentStatus": "Stable",
+    "Description": "+ Add localization support",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2014-01-01T20:14:07.77-08:00",
+    "Files": [
+      {
+        "Id": "a9f79819-dfbe-46d7-b8e7-85df20b6ccd2",
+        "FileName": "SearchToolBar.zip",
+        "Url": "./1/a9f79819-dfbe-46d7-b8e7-85df20b6ccd2",
+        "Type": "Source Code",
+        "UploadDate": "2014-01-01T20:14:03.743-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "2",
+    "Name": "0.1.0.6 NY Edition",
+    "DevelopmentStatus": "Stable",
+    "Description": "I think it`s finally stable\nIn this release:\n+ Date&Time filter\n+ Load Filter method\n+ Support all numeric types\n+ Localization support:\n_many thanks [url:BevanWeiss|https://www.codeplex.com/site/users/view/BevanWeiss] for EN and [url:DCourtel|https://www.codeplex.com/site/users/view/DCourtel] for FR translation_\n+ Check list node double click\n~ many bugs fixed\n~ total code review and refactory (sorry for renamed public methods)\n~ some speedup\nAnd Happy New Year!",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2014-01-01T21:06:43.87-08:00",
+    "Files": [
+      {
+        "Id": "f88137a6-99fe-4bb8-aa20-bafc928cbd3c",
+        "FileName": "ADGV Dll.zip",
+        "Url": "./2/f88137a6-99fe-4bb8-aa20-bafc928cbd3c",
+        "Type": "Application",
+        "UploadDate": "2013-12-31T09:39:00.347-08:00"
+      },
+      {
+        "Id": "1429b7ee-1686-4669-a3e9-8cf1928931bf",
+        "FileName": "ADGV Sample EXE.zip",
+        "Url": "./2/1429b7ee-1686-4669-a3e9-8cf1928931bf",
+        "Type": "Example",
+        "UploadDate": "2014-01-01T21:05:51.19-08:00"
+      },
+      {
+        "Id": "063a6d4e-113e-44cb-8fb6-cc7b468044ff",
+        "FileName": "ADGV Source.zip",
+        "Url": "./2/063a6d4e-113e-44cb-8fb6-cc7b468044ff",
+        "Type": "Source Code",
+        "UploadDate": "2014-01-01T21:05:51.22-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "3",
+    "Name": "0.1.0.5",
+    "DevelopmentStatus": "Beta",
+    "Description": "+ New ContextFilterColumnHeaderCell class instead ContextFilterButton class\n~ Improved filter image paint\n~ Fixed incorrect paint of ContextFilterButton",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-05-03T03:32:27.93-07:00",
+    "Files": [
+      {
+        "Id": "3634c085-d2e6-4982-9113-0ef3bd9fc999",
+        "FileName": "ADGV DLL.zip",
+        "Url": "./3/3634c085-d2e6-4982-9113-0ef3bd9fc999",
+        "Type": "Application",
+        "UploadDate": "2013-05-02T09:04:44.07-07:00"
+      },
+      {
+        "Id": "8096fecf-a8ac-45f8-b709-6a2995d17cd8",
+        "FileName": "ADGV Source.zip",
+        "Url": "./3/8096fecf-a8ac-45f8-b709-6a2995d17cd8",
+        "Type": "Source Code",
+        "UploadDate": "2013-05-02T09:04:44.1-07:00"
+      },
+      {
+        "Id": "22dac558-7744-4c0c-97eb-8a92a343fda0",
+        "FileName": "ADGV Sample EXE.zip",
+        "Url": "./3/22dac558-7744-4c0c-97eb-8a92a343fda0",
+        "Type": "Example",
+        "UploadDate": "2013-05-02T09:04:44.1-07:00"
+      },
+      {
+        "Id": "9d2fc085-f0e4-4076-a99b-bf9d04ebf13b",
+        "FileName": "ADGV Sample Source.zip",
+        "Url": "./3/9d2fc085-f0e4-4076-a99b-bf9d04ebf13b",
+        "Type": "Source Code",
+        "UploadDate": "2013-05-03T03:32:26.62-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "4",
+    "Name": "0.1.0.3",
+    "DevelopmentStatus": "Beta",
+    "Description": "fix\n~Error in ADGV.FindCell method (add check if columnindex > columntofind)\n\"if (ColumnIndex > c) RowIndex++;\"",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-05-02T09:05:27.763-07:00",
+    "Files": [
+      {
+        "Id": "ae5d5b5b-299f-4391-bace-18abd1242528",
+        "FileName": "ADGVDLL.zip",
+        "Url": "./4/ae5d5b5b-299f-4391-bace-18abd1242528",
+        "Type": "Application",
+        "UploadDate": "2013-03-14T09:35:02.187-07:00"
+      },
+      {
+        "Id": "b6dbb244-8873-497b-b315-fc63b2812387",
+        "FileName": "ADGVSource.zip",
+        "Url": "./4/b6dbb244-8873-497b-b315-fc63b2812387",
+        "Type": "Source Code",
+        "UploadDate": "2013-03-14T09:35:02.203-07:00"
+      },
+      {
+        "Id": "408dd398-c401-4d14-bab3-dff8ded02075",
+        "FileName": "ADGV Sample EXE.zip",
+        "Url": "./4/408dd398-c401-4d14-bab3-dff8ded02075",
+        "Type": "Example",
+        "UploadDate": "2013-03-14T17:33:17.567-07:00"
+      },
+      {
+        "Id": "fec3f033-014a-4e9f-b54e-2cd6a6ecd10b",
+        "FileName": "ADGVSample Source.zip",
+        "Url": "./4/fec3f033-014a-4e9f-b54e-2cd6a6ecd10b",
+        "Type": "Example",
+        "UploadDate": "2013-03-14T17:33:17.583-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "5",
+    "Name": "SearchToolBar Control",
+    "DevelopmentStatus": "Stable",
+    "Description": "SearchToolBar control that you can use for search in ADGV",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2014-01-01T20:14:29.703-08:00",
+    "Files": [
+      {
+        "Id": "468e5b1b-9fd8-4f2a-8c04-f82a633a1760",
+        "FileName": "SearchToolBar Source.zip",
+        "Url": "./5/468e5b1b-9fd8-4f2a-8c04-f82a633a1760",
+        "Type": "Source Code",
+        "UploadDate": "2013-03-14T17:31:08.533-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "6",
+    "Name": "0.1.0.2",
+    "DevelopmentStatus": "Beta",
+    "Description": "fix\n~customfilter \"Beetwen\" filter\n~customfilter Form new validate code\n~unsupported Types now filter as strings (check on Guid Column)\n~error when filter tree is empty after click \"OK\" button\n~exception when set filter with empty filterstring",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-03-06T07:31:06.18-08:00",
+    "Files": [
+      {
+        "Id": "c2255b3b-6833-46ea-95b2-980727006b81",
+        "FileName": "ADGV DLL.zip",
+        "Url": "./6/c2255b3b-6833-46ea-95b2-980727006b81",
+        "Type": "Application",
+        "UploadDate": "2013-03-06T07:31:05.23-08:00"
+      },
+      {
+        "Id": "c9f0a420-f737-41aa-82aa-814d6861f706",
+        "FileName": "ADGV Source.zip",
+        "Url": "./6/c9f0a420-f737-41aa-82aa-814d6861f706",
+        "Type": "Source Code",
+        "UploadDate": "2013-03-06T07:31:05.26-08:00"
+      },
+      {
+        "Id": "046aa994-cc63-4b6d-ab74-5026793f67e2",
+        "FileName": "ADGVSample EXE.zip",
+        "Url": "./6/046aa994-cc63-4b6d-ab74-5026793f67e2",
+        "Type": "Example",
+        "UploadDate": "2013-03-06T07:31:05.26-08:00"
+      },
+      {
+        "Id": "079f8760-32fd-4aee-9777-48bebc93cd89",
+        "FileName": "ADGVSample Source.zip",
+        "Url": "./6/079f8760-32fd-4aee-9777-48bebc93cd89",
+        "Type": "Example",
+        "UploadDate": "2013-03-06T07:31:05.277-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "7",
+    "Name": "0.1.0.1",
+    "DevelopmentStatus": "Beta",
+    "Description": "fix\n~Correct ContextFilterButton display for invisible columns",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-02-25T17:12:54.08-08:00",
+    "Files": [
+      {
+        "Id": "f5755467-40d3-4ecb-b892-7b69fa1eb692",
+        "FileName": "AdvancedDataGridViewDLL.zip",
+        "Url": "./7/f5755467-40d3-4ecb-b892-7b69fa1eb692",
+        "Type": "Application",
+        "UploadDate": "2013-02-25T17:12:53.067-08:00"
+      },
+      {
+        "Id": "4b218902-32c6-484c-979e-f83b7f52e611",
+        "FileName": "AdvancedDataGridViewSource.zip",
+        "Url": "./7/4b218902-32c6-484c-979e-f83b7f52e611",
+        "Type": "Source Code",
+        "UploadDate": "2013-02-25T17:12:53.08-08:00"
+      },
+      {
+        "Id": "f89fa201-5c72-4dad-bbb9-b185e9d40899",
+        "FileName": "ADGVSampleExe.zip",
+        "Url": "./7/f89fa201-5c72-4dad-bbb9-b185e9d40899",
+        "Type": "Example",
+        "UploadDate": "2013-02-25T17:12:53.097-08:00"
+      },
+      {
+        "Id": "a4e19e90-c2b6-4682-8d44-466410356a0f",
+        "FileName": "ADGVSampleSource.zip",
+        "Url": "./7/a4e19e90-c2b6-4682-8d44-466410356a0f",
+        "Type": "Example",
+        "UploadDate": "2013-02-25T17:12:53.097-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "8",
+    "Name": "0.1.0.0",
+    "DevelopmentStatus": "Beta",
+    "Description": "VERSION NUMBER FIX (It will be 0.x.x.x until stable release. Sorry guys, don`t know how it happened)\nadd\n+FilterButton on ColumnHeader (ContextFilterButton Class)\nremove\n-public properties e.g. FilterBitmap, DefaultFilterBitmap... (do you really need them?)\nfix\n~SetFilterForm values validation fix, between custom filter fix, AutoValidate property change, TopMost property change\n~some errors, simplified code, memory leaks\n~contextFiltermenu lastfilter`s menu items fix",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-02-10T06:09:44.78-08:00",
+    "Files": [
+      {
+        "Id": "61b2b6c8-b6a5-40c3-bebf-ab864e1f4927",
+        "FileName": "AdvancedDataGridViewDll.zip",
+        "Url": "./8/61b2b6c8-b6a5-40c3-bebf-ab864e1f4927",
+        "Type": "Application",
+        "UploadDate": "2013-02-10T06:09:07.563-08:00"
+      },
+      {
+        "Id": "8f1c3328-68df-4240-858b-896d2414686c",
+        "FileName": "AdvancedDataGridViewSource.zip",
+        "Url": "./8/8f1c3328-68df-4240-858b-896d2414686c",
+        "Type": "Source Code",
+        "UploadDate": "2013-02-10T06:09:07.577-08:00"
+      },
+      {
+        "Id": "e08fb961-341c-4d1c-b1f4-847717e056ec",
+        "FileName": "ADGVSample.zip",
+        "Url": "./8/e08fb961-341c-4d1c-b1f4-847717e056ec",
+        "Type": "Example",
+        "UploadDate": "2013-02-10T06:09:07.593-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "9",
+    "Name": "0.1.0.10",
+    "DevelopmentStatus": "Stable",
+    "Description": "+ SetFilterForm \"Between\"-filter support filtering from min to max and from max to min values ([url:http://adgv.codeplex.com/workitem/1347],\n[url:http://adgv.codeplex.com/workitem/1346])\n+ SetFilterForm autofocus at valuecontrol after load form\n+ Add automatic DataGridViewColum Sorting when Column Filter disabled ([url:http://adgv.codeplex.com/workitem/1348])\n~ Fix \"filterButtonImageBounds error with scrollbar\"  issue ([url:http://adgv.codeplex.com/workitem/1419])\n~ Fix \"An empty row is created when filtering on blanks rows\"  issue ([url:http://adgv.codeplex.com/workitem/1338])\n~ \"SearchToolBar Control\" now included in ADGV\nNow you can download ADGV from NuGet ([url:http://www.nuget.org/packages/ADGV/])",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2015-05-18T01:19:43.273-07:00",
+    "Files": [
+      {
+        "Id": "0142e110-d494-42c3-81e0-bbdd9d1a21d2",
+        "FileName": "ADGV Dll.zip",
+        "Url": "./9/0142e110-d494-42c3-81e0-bbdd9d1a21d2",
+        "Type": "Application",
+        "UploadDate": "2014-05-31T02:49:28.717-07:00"
+      },
+      {
+        "Id": "5fe59611-6ffd-4918-a613-7e8b75b40d42",
+        "FileName": "ADGV Source.zip",
+        "Url": "./9/5fe59611-6ffd-4918-a613-7e8b75b40d42",
+        "Type": "Application",
+        "UploadDate": "2014-05-31T02:49:28.777-07:00"
+      }
+    ]
+  }
+]

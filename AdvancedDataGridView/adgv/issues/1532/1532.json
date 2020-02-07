@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 3,
+    "Custom": "",
+    "Description": "Whould it be possible to implement saving and loading of filters in a different way?\nIt would be fine for users to have the possibility to continue modifying the filters after loading former saved filters.\nAt the moment in the Sample the whole FilterString for the entire DataGridView is persisted.\nTo realize this feature the FilterMenu state would have to be persisted.",
+    "LastUpdatedDate": "2015-06-25T18:32:50.767-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2015-02-11T08:14:02.893-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Continue filtering after loading saved filters",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1532
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "maybe add feature to save current selected filter of each filtermenu in this menu`s custom filters?",
+      "PostedDate": "2015-02-12T17:16:06.437-08:00",
+      "Id": 184401
+    },
+    {
+      "Message": "I tested loading filters in the ADGVSample.\n\n- uncheck \"5\" in the column \"int\"\n- save filter\n- clear filters\n- load filter\nProblem: the unchecked \"5\" is not in the filter list anymore\n",
+      "PostedDate": "2015-06-07T22:44:37.933-07:00",
+      "Id": 185384
+    },
+    {
+      "Message": "Its not a bug its a feature :)\nProblem that TreeView nodes loads from list of table rows when you open filter menu.\nYou set filter \"without 5\"\nYou click filter menu\nMenu get table rows(without 5) and show it\n\nI have some ideas how to change it in future releases",
+      "PostedDate": "2015-06-25T18:32:50.767-07:00",
+      "Id": 185937
+    }
+  ]
+}

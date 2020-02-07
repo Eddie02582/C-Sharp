@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "hi im using the control and doing my test runs i can see the control is very slow when it comes to big quatity of rows in the table like over 10000 and i have bout 90000 rows and the filters take good time like 5 min some times more before it shows. \r\n\r\nit would be very nice if the loading of the filters and data could be optimized to load data of greate quatity faster.\r\n\r\ncheers.\r\n",
+    "LastUpdatedDate": "2015-06-29T23:00:12.503-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2015-06-29T23:00:12.503-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Loading of filters are very slow at quantity over 10000 rows",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1551
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

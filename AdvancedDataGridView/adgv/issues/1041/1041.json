@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "When filtering date column and selecting a year nothing is displayed.  Selecting a single day works as expected",
+    "LastUpdatedDate": "2013-02-13T19:53:18.07-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2012-10-23T07:40:04.8-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Date filter by year doesn't work",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 1041
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Just check in Sample Code year filter work wellcan you give DateTime Object thats you insert into DataGridView?",
+      "PostedDate": "2012-10-29T01:00:42.54-07:00",
+      "Id": 184335
+    }
+  ]
+}

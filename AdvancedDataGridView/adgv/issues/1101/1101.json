@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "fixed in v 0.1.0.2",
+    "ClosedDate": "2013-03-06T07:22:20.49-08:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "If the mouse enters the ADGV in upper left an exception is thrown.  In eCellMouseEnter and eCellMouseLeave, e.ColumnIndex is negative and index throws an error.  Code should check if (e.ColumnIndex >= 0) ?",
+    "LastUpdatedDate": "2013-05-16T01:15:39.853-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "adgv",
+    "ReportedDate": "2013-01-18T10:33:45.353-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Exception created mouse at -1 row and column",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 1101
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "yes I catch itThankI will add a button to ADGV HeaderCell in next version and fix that error\r\n\r\n",
+      "PostedDate": "2013-01-20T22:27:45.553-08:00",
+      "Id": 184336
+    }
+  ]
+}
