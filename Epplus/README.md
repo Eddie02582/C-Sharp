@@ -2,7 +2,7 @@
 
 好用的讀寫Excel 程式
 
-##　讀取excel
+## 讀取excel
 ```csharp
 var fileName = "888.xlsx";
 var file = new FileInfo(fileName);
@@ -13,7 +13,7 @@ using (var excel = new ExcelPackage(file))
 }
 ```
 
-##　建立excel
+## 建立excel
 與讀取方式相同,但需要需要新增sheet,否則會暴錯
 
 
@@ -33,7 +33,7 @@ using (var excel = new ExcelPackage(file))
     File.WriteAllBytes(fileName, bin);
 ```
 
-## excel 儲存格操作
+## 儲存格操作
 
 ### 取得sheet
 
@@ -105,7 +105,7 @@ int endColumn = worksheet.Dimension.End.Column;//結束欄編號，從1算起
   worksheet.Cells[RowStart, ColStart, RowEnd, ColEnd].Style.Border.BorderAround(style)
 ``` 
 
-####樣式設定
+#### 樣式設定
 ```csharp 
 sheet.Cells.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; 
 sheet.Cells.Style.Font.Name = "Arial";
