@@ -1,35 +1,0 @@
-<div class="wikidoc"><h1>Advanced DataGridView</h1>v1.0.6<br /><a href="https://adgv.codeplex.com/wikipage?title=Documentation%20%28RU%29&referringTitle=Documentation">RU</a> <u>EN</u>
-<hr />
-<h3>Contents <a name="сontents"></a></h3><ol><li><a href="#Description">Description</a></li>
-<li><a href="#Classes">Classes and public methods</a></li>
-<li><a href="#Loc">Localization</a></li>
-<li><a href="#Search">SearchToolBar Control</a></li>
-<li><a href="#How">How to use</a></li>
-<li><a href="#Example">Example code</a></li></ol>
-
-<h3>Description  <a name="Description"></a></h3><a href="#сontents">back</a> <br />
-<h3>Classes and public methods<a name="Classes"></a></h3><a href="#сontents">back</a> <br /><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> AdvancedDataGridView : DataGridView  <span style="color:Green;">// Main class</span>
-{
-       <span style="color:Blue;">public</span> Boolean AutoGenerateContextFilters {<span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>;} <span style="color:Green;">// Automatic add filters when new columns added</span>
-       <span style="color:Blue;">public</span> Boolean DateWithTime {<span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>;} <span style="color:Green;">// </span>
-       <span style="color:Blue;">public</span> Boolean TimeFilter {<span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>;}
-       <span style="color:Blue;">public</span> String SortString {<span style="color:Blue;">get</span>; <span style="color:Blue;">private</span> <span style="color:Blue;">set</span>;}
-       <span style="color:Blue;">public</span> String FilterString {<span style="color:Blue;">get</span>; <span style="color:Blue;">private</span> <span style="color:Blue;">set</span>;}
- 
-       <span style="color:Blue;">public</span> <span style="color:Blue;">event</span> EventHandler SortStringChanged;
-       <span style="color:Blue;">public</span> <span style="color:Blue;">event</span> EventHandler FilterStringChanged;
-
-       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> EnableFilter(DataGridViewColumn Column)
-       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> EnableFilter(DataGridViewColumn Column, Boolean DateWithTime, Boolean TimeFilter)
-       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> DisableFilter(DataGridViewColumn Column)
-       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> LoadFilter(String Filter, String Sorting = <span style="color:Blue;">null</span>)
-       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> ClearSort(Boolean FireEvent = <span style="color:Blue;">false</span>)
-       <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> ClearFilter(Boolean FireEvent = <span style="color:Blue;">false</span>)
-       <span style="color:Blue;">public</span> DataGridViewCell FindCell(<span style="color:Blue;">string</span> ValueToFind, <span style="color:Blue;">string</span> ColumnName = <span style="color:Blue;">null</span>, <span style="color:Blue;">int</span> RowIndex = 0, <span style="color:Blue;">int</span> ColumnIndex = 0, Boolean isWholeWordSearch = <span style="color:Blue;">true</span>, Boolean isCaseSensitive = <span style="color:Blue;">false</span>)
-}
-</pre></div><br /><br />
-<h3>Localization<a name="Loc"></a></h3><a href="#сontents">back</a> <br />
-<h3>SearchToolBar Control<a name="Search"></a></h3><a href="#сontents">back</a> <br />
-<h3>How to use<a name="How"></a></h3><a href="#сontents">back</a> <br />
-<h3>Example code<a name="Example"></a></h3><a href="#сontents">back</a> <br /></div><div class="ClearBoth"></div>
