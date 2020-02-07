@@ -3,7 +3,7 @@
 
 ## TcpListener
 
-###Server
+### Server
 
 
 ```csharp
@@ -46,7 +46,7 @@ public static void Client()
 
 
 ```
-###Client
+### Client
    
 
 ```csharp
@@ -87,7 +87,7 @@ public static void Client1()
 ## Sockets
 這個範例透過StreamReader,StreamWriter 直接寫入字串
 
-###Server
+### Server
 
 
 
@@ -146,7 +146,7 @@ if (newsock.Connected)
 ```
 
 
-###Client
+### Client
    
 
 ```csharp
@@ -209,7 +209,7 @@ public static void Client2()
 ```            
             
 
-##接收檔案
+## 接收檔案
 
 ### 接收方
 
