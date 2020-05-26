@@ -1,7 +1,11 @@
-# C#北龄絃菲公
+# C# 鎺у埗閸电洡婊戦紶
+
+浣跨敤windows鍏у缓user32.dll
+閸电洡浣跨敤SendKeys.Send,鑻ヨ閫佸嚭ESC,浣跨敤SendKeys.Send("{ESC}")
 
 
-```c_sharp
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
