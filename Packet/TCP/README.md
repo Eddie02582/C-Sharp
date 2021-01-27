@@ -1,213 +1,192 @@
 # TCP
-這邊介紹兩種方式一種是用Socket + TcpListener,另一種是只用Socket實作
+這邊介紹兩種方式一種是用TcpListener,另一種是用Socket 建立TCP連線
 
-## TcpListener
+## Server
 
-### Server
-
+### TcpListener
 
 ```csharp
 using System.Net;
 using System.Net.Sockets;
 
-public static void Client()
-{
+public static void Server1()
+{    
     string ip = "127.0.0.1";
     int iPort = 3600;
+
     IPAddress IPA = IPAddress.Parse(ip);
-    TcpListener TL = new TcpListener(IPA, iPort);
-    TL.Start();
-    
+    TcpListener tcplistener = new TcpListener(IPA, iPort);
+    tcplistener.Start();
+
     Socket newsock = null;
-    newsock = TL.AcceptSocket();
+    byte[] myBufferBytes;
+    int bufferSize;
+    int dataLength;
+    newsock = tcplistener.AcceptSocket();
     while (true)
-    {
-        //newsock = TL.AcceptSocket();
+    {                
         if (newsock.Connected)
         {
-            int dataLength;
-            byte[] myBufferBytes = new byte[1024];
-            // 取得用戶端寫入的資料 
+            //取得receive buffersize 
+            bufferSize = newsock.ReceiveBufferSize;
+            myBufferBytes = new byte[bufferSize];
+            // 接收資料 
             dataLength = newsock.Receive(myBufferBytes);
+            //將byte to string 
             string strRecieve = Encoding.ASCII.GetString(myBufferBytes, 0, dataLength);
             Console.WriteLine(string.Format("讀取訊息:{0}", strRecieve));
-    
-            // 將接收到的資料回傳訊息給發送端
-    
-            //newsock.Send(myBufferBytes, myBufferBytes.Length, 0);
+
+            // 發送訊息            
             myBufferBytes = Encoding.ASCII.GetBytes("OK");
-    
-            newsock.Send(myBufferBytes, myBufferBytes.Length, 0);
-            
+            newsock.Send(myBufferBytes, myBufferBytes.Length, 0);                  
         }
-    
     }
-}  
-
-
+}
 ```
-### Client
+
+### Socket
+傳輸與接受與TcpListener一樣差別在連線寫法
+```csharp
+public static void Server3()
+{
    
-
-```csharp
-public static void Client1()
-{
-    string ip = "127.0.0.1";
-    int iPort = 3600;
-    TcpClient tcpclient = new TcpClient(ip, iPort);            
-    NetworkStream network = tcpclient.GetStream();
-
-    Byte[] myBytes;
-    int bufferSize;
-    byte[] myBufferBytes;
-    string strSendData = "";
-
-    while (true)
-    {
-        strSendData = Console.ReadLine();
-        myBytes = Encoding.ASCII.GetBytes(strSendData); //將字串轉成byte
-        network.Write(myBytes, 0, myBytes.Length);      //寫入訊息
-        
-        Console.WriteLine(string.Format("寫入訊息:{0}",strSendData));
-
-        // 從網路資料流讀取資料
-        bufferSize = tcpclient.ReceiveBufferSize; //取得buffer 長度
-        myBufferBytes = new byte[bufferSize];
-        int dataLength = network.Read(myBufferBytes, 0, bufferSize); //讀取
-        
-        string strRecieve = Encoding.ASCII.GetString(myBufferBytes, 0, dataLength);
-        Console.WriteLine(string.Format("讀訊息:{0}", strRecieve));
-       
-    }
-
-}   
-```           
-      
-      
-## Sockets
-這個範例透過StreamReader,StreamWriter 直接寫入字串
-
-### Server
-
-
-
-
-```csharp
-using System.Net;
-using System.Net.Sockets;
-using System.IO;
-public static void Server2()
-{
     string ip = "127.0.0.1";
     int iPort = 3600;
     IPAddress IPA = IPAddress.Parse(ip);
     Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);  //建立Socket 連線  
     IPEndPoint ipep = new IPEndPoint(IPA, iPort);
     socket.Bind(ipep);//建立連線
-    socket.Listen(10);            
-   
+    socket.Listen(10);
+
     Socket newsock = null;
     newsock = socket.Accept();
+
+    byte[] myBufferBytes;
+    int bufferSize;
+    int dataLength;
+
     while (true)
-    {
-       
-        NetworkStream stream = new NetworkStream(newsock);
-        StreamReader reader = new StreamReader(stream);
-        StreamWriter writer = new StreamWriter(stream);
-
-        
-
+    {  
         if (newsock.Connected)
         {
-            string strRecieve = reader.ReadLine();
+            //取得receive buffersize 
+            bufferSize = newsock.ReceiveBufferSize;
+            myBufferBytes = new byte[bufferSize];
+            // 接收資料 
+            dataLength = newsock.Receive(myBufferBytes);
+
+            //將byte to string 
+            string strRecieve = Encoding.ASCII.GetString(myBufferBytes, 0, dataLength);
             Console.WriteLine(string.Format("讀取訊息:{0}", strRecieve));
-            writer.WriteLine("OK");
-            writer.Flush();    
+
+            myBufferBytes = Encoding.ASCII.GetBytes("OK");
+
+            newsock.Send(myBufferBytes, myBufferBytes.Length, 0);
         }
     }
-}
-```
 
-也可以使用byte,但是byte 要對應byte
-
-```csharp
-if (newsock.Connected)
-{
-    int dataLength;
-    byte[] myBufferBytes = new byte[1024];
-    // 取得用戶端寫入的資料 
-    dataLength = newsock.Receive(myBufferBytes);
-    string strRecieve = Encoding.ASCII.GetString(myBufferBytes, 0, dataLength);
-    Console.WriteLine(string.Format("讀取訊息:{0}", strRecieve));
-    myBufferBytes = Encoding.ASCII.GetBytes("OK");
-    newsock.Send(myBufferBytes, myBufferBytes.Length, 0);
 }
 
 ```
 
+也可以透過直接接收傳送字串
+```
+    NetworkStream network = new NetworkStream(newsock);
+    StreamReader reader = new StreamReader(network);
+    StreamWriter writer = new StreamWriter(network);
+    
+    writer.WriteLine(strSendData);
+    writer.Flush();   
 
-### Client
+    strRecieve = reader.ReadLine();    
+    
+```
+
+
+
+## Client
+
+### TCPClient
    
 
+```csharp
+    public static void Client1()
+    {
+        string ip = "127.0.0.1";
+        int iPort = 3600;
+        TcpClient tcpclient = new TcpClient(ip, iPort);            
+        NetworkStream network = tcpclient.GetStream();
+
+        Byte[] myBytes;
+        int bufferSize;
+        byte[] myBufferBytes;
+        string strSendData = "";
+
+        while (true)
+        {
+            strSendData = Console.ReadLine();
+            myBytes = Encoding.ASCII.GetBytes(strSendData); //將字串轉成byte
+            network.Write(myBytes, 0, myBytes.Length);      //寫入訊息                
+            Console.WriteLine(string.Format("寫入訊息:{0}",strSendData));
+
+            // 從網路資料流讀取資料
+            bufferSize = tcpclient.ReceiveBufferSize; //取得buffer 長度
+            myBufferBytes = new byte[bufferSize];
+            int dataLength = network.Read(myBufferBytes, 0, bufferSize); //讀取
+            
+            string strRecieve = Encoding.ASCII.GetString(myBufferBytes, 0, dataLength);
+            Console.WriteLine(string.Format("讀訊息:{0}", strRecieve));
+           
+        }
+
+    }
+```           
+      
+      
+### Sockets
 ```csharp
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
-public static void Client2()
+public static void Client()
 {
     string ip = "127.0.0.1";
     int iPort = 3600;
     IPAddress IPA = IPAddress.Parse(ip);
     Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);  //建立Socket 連線  
     socket.Connect(ip, iPort);
+    Byte[] myBytes;
+    int bufferSize;
+    byte[] myBufferBytes;
     string strSendData = "";
 
-    NetworkStream stream = new NetworkStream(socket);
-    StreamReader reader = new StreamReader(stream);
-    StreamWriter writer = new StreamWriter(stream);
 
     while (true)
     {
         if (socket.Connected)
         {
+
             strSendData = Console.ReadLine();
-            writer.WriteLine(strSendData);
-            writer.Flush();      
+            myBytes = Encoding.ASCII.GetBytes(strSendData); //將字串轉成byte
+            socket.Send(myBytes, 0, myBytes.Length,0);      //寫入訊息
+
             Console.WriteLine(string.Format("寫入訊息:{0}", strSendData));
-            
-            string strRecieve = reader.ReadLine();
-            Console.WriteLine(string.Format("讀取訊息:{0}", strRecieve));
+
+
+            //bufferSize = socket.ReceiveBufferSize;
+            bufferSize = 1024;
+            myBufferBytes = new byte[bufferSize];
+            int dataLength = socket.Receive(myBufferBytes, bufferSize,0);
+
+            string strRecieve = Encoding.ASCII.GetString(myBufferBytes, 0, dataLength);
+            Console.WriteLine(string.Format("讀訊息:{0}", strRecieve));
         }
 
     }
 
 }
-```            
-           
-也可以使用byte
+```
 
-```csharp
- if (socket.Connected)
-{
-
-    strSendData = Console.ReadLine();
-    myBytes = Encoding.ASCII.GetBytes(strSendData); //將字串轉成byte
-    socket.Send(myBytes, 0, myBytes.Length,0);      //寫入訊息
-
-    Console.WriteLine(string.Format("寫入訊息:{0}", strSendData));
-
-
-    //bufferSize = socket.ReceiveBufferSize;
-    bufferSize = 1024;
-    myBufferBytes = new byte[bufferSize];
-    int dataLength = socket.Receive(myBufferBytes, bufferSize,0);
-
-    string strRecieve = Encoding.ASCII.GetString(myBufferBytes, 0, dataLength);
-    Console.WriteLine(string.Format("讀訊息:{0}", strRecieve));
-}
-
-```            
-            
 
 ## 接收檔案
 
@@ -215,21 +194,21 @@ public static void Client2()
 
 ```csharp
 
-int receivedBytesLen = 0;
-int recieve_data_size = 0;
-int fileNameLen = 0;
-string fileName = "";
-int first = 1;                  
-byte[] clientData = new byte[1024 * 5000];
-//5000 = 5MB 50000 = 50MB //定義傳輸每段資料大小，值越大傳越快  
-//byte[] clientData = new byte[8192];  
-string receivedPath = "D:/";
-BinaryWriter bWrite = null;
-MemoryStream ms = null;
-string file_type = "";
-string display_data = "";
-string content = "";
-double cal_size = 0;
+    int receivedBytesLen = 0;
+    int recieve_data_size = 0;
+    int fileNameLen = 0;
+    string fileName = "";
+    int first = 1;                  
+    byte[] clientData = new byte[1024 * 5000];
+    //5000 = 5MB 50000 = 50MB //定義傳輸每段資料大小，值越大傳越快  
+    //byte[] clientData = new byte[8192];  
+    string receivedPath = "D:/";
+    BinaryWriter bWrite = null;
+    MemoryStream ms = null;
+    string file_type = "";
+    string display_data = "";
+    string content = "";
+    double cal_size = 0;
  do
  {
      receivedBytesLen = Sockets.Receive(clientData);
