@@ -42,7 +42,7 @@ public class TestInfo{
         Console.WriteLine(json);         
     } 
 ```
-結果如下
+結果如下<br>
 <img src = "1.PNG">
 
 可以自訂輸出日期格式
@@ -54,7 +54,7 @@ public class TestInfo{
     json = JsonConvert.SerializeObject(testInfo, settings);    
     Console.WriteLine(json);       
 ```
-結果如下
+結果如下<br>
 <img src = "2.PNG">
 輸出json
 
