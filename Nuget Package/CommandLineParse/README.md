@@ -94,18 +94,18 @@ namespace command_line_example
 
 使用方法
 
-````csharp
+```csharp
     Parser.Default.ParseArguments<AddOptions, CommitOptions, CloneOptions>(args)
     .WithParsed<AddOptions>(options => AddAction(options))
     .WithParsed<CommitOptions>(options => CommitAction(options))
     .WithParsed<CloneOptions>(options => CloneAction(options))
-    .WithNotParsed(errors => ErrorAction(options))
+    .WithNotParsed(errors => ErrorAction(options));
     
 ```
  
 如果需要回傳error code可以使用
  
-````csharp
+```csharp
  var exitCode = Parser.Default.ParseArguments<AddOptions, CommitOptions, CloneOptions>(args)
     .MapResult(
       (AddOptions options) => RunAddAndReturnExitCode(opts),
@@ -116,7 +116,7 @@ namespace command_line_example
 ```
 
 
-````csharp
+```csharp
 using System;
 using CommandLine;
 namespace command_line_example
