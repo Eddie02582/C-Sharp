@@ -1,15 +1,7 @@
 # NLog 
 
-是一款主要用來寫log的package,只要層級由低到高如下
+是一款主要用來寫log的package
 
-<ul>
-    <li>Trace</li>
-    <li>Debug</li>
-    <li>Info</li>
-    <li>Warn</li>
-    <li>Error</li>
-    <li>Fatal</li>
-</ul>
 
 
 ## Nuget安裝
@@ -90,8 +82,7 @@ nuget.exe install NLog.Config
     <li>${shortdate}</li>  
     <li>${longdate}</li>  
     <li>${level}</li>  
-    <li>${message}</li>  
-    <li>concurrentWrites:是否續寫</li>      
+    <li>${message}</li> 
 </ul>
 
 
@@ -105,7 +96,7 @@ nuget.exe install NLog.Config
 </targets>
 ```
 
-若想輸出到console
+輸出到console
 ```xml
   <targets>
     ...
@@ -115,7 +106,7 @@ nuget.exe install NLog.Config
 </targets>
 ```
 
-使用ColoredConsole就會始console變色
+使用ColoredConsole
 ```xml
   <targets>
     ...
@@ -148,6 +139,18 @@ nuget.exe install NLog.Config
     <li>writeTo:comma separated list of targets to write to</li>    
 </ul>
 
+輸出層級由低到高如下
+<ul>
+    <li>Trace</li>
+    <li>Debug</li>
+    <li>Info</li>
+    <li>Warn</li>
+    <li>Error</li>
+    <li>Fatal</li>
+</ul>
+
+
+
 設定最小輸出level
 ```xml
 <logger name="*" minlevel="Trace" writeTo="fileTarget"/>
@@ -168,7 +171,7 @@ nuget.exe install NLog.Config
 
 
 ## 使用
-```c_sharp
+```csharp
 using System.Text;
 using NLog;
 using NLog.Config;
@@ -227,7 +230,7 @@ namespace NLog
 也可以不使用NLog.Config
 
 
-```c_sharp
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
