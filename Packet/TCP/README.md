@@ -90,7 +90,7 @@ public static void Server3()
 ```
 
 也可以透過直接接收傳送字串
-```
+```csharp
     NetworkStream network = new NetworkStream(newsock);
     StreamReader reader = new StreamReader(network);
     StreamWriter writer = new StreamWriter(network);
