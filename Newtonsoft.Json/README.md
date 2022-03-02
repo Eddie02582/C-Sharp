@@ -56,8 +56,8 @@ Console.WriteLine(json);
 ```
 結果如下<br>
 <img src = "2.PNG">
-輸出json
 
+輸出json檔<br>
 ```csharp
 File.WriteAllText("example1.json", json, Encoding.UTF8);       
 ```
