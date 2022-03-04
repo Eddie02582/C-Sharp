@@ -1,8 +1,11 @@
 # CommandLineParser
-
+這是一個命令解析的
 
 
 ## Simple Example
+
+<img src = "CommandLineParse-simple.PNG">
+
 ```csharp
 using System;
 using CommandLine;
@@ -69,9 +72,9 @@ namespace command_line_example
     
 ```
 
-## Multiple Options
-有時候不同動做需要不同的Option,可以使用verb屬性,此時使用方式為add -f 
+## Multiple Verb
 
+有時候不同動作需要不同的Option,可以使用verb屬性來區格
 ```csharp
         [Verb("add", HelpText = "Add file contents to the index.")]
         class AddOptions {
@@ -91,8 +94,16 @@ namespace command_line_example
             public string outfile { get; set; }              
         }     
 ```
+顯示效果如下
+<img src = "CommandLineParse-complex">
 
-使用方法
+如果輸入 add 指令
+<img src = "CommandLineParse-complex-2">
+
+
+
+
+如何實際執行
 
 ```csharp
     Parser.Default.ParseArguments<AddOptions, CommitOptions, CloneOptions>(args)
@@ -115,7 +126,7 @@ namespace command_line_example
       
 ```
 
-
+最終的code
 ```csharp
 using System;
 using CommandLine;
@@ -150,8 +161,7 @@ namespace command_line_example
             .WithParsed<CloneOptions>(options => CloneAction(options))
             .WithNotParsed(errors => ErrorAction());
 
-        }       
-
+        }
 
         static void AddAction(AddOptions option){
             Console.WriteLine("AddAction");          
