@@ -245,7 +245,7 @@ namespace NLog
     {
         private static void Main(string[] args)
         {
-            //CreateLogger();
+            CreateLogger();
 
             Logger logger = LogManager.GetCurrentClassLogger();
            
@@ -280,9 +280,63 @@ namespace NLog
 }
 ```
 
+## NLog with Winform RichTextBox
+
+```
+nuget.exe install NLog.Windows.Forms
+```
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
+using NLog.Windows.Forms;
+
+namespace NLog
+{
+    class Program
+    {
+        private static void Main(string[] args)
+        {
+            CreateLogger();
+
+            Logger logger = LogManager.GetCurrentClassLogger();
+           
+            logger.Trace("Trace");
+            logger.Debug("Debug");
+            logger.Info("Info");
+            logger.Warn("Warn");
+            logger.Error("Error");
+            logger.Fatal("Fatal");       
+            
+        }
+
+        private static void CreateLogger()
+        {
+            var config = new LoggingConfiguration();
+            var fileTarget = new FileTarget
+            {
+                FileName = "${basedir}/logs/${shortdate}.log",
+                Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}] ${message}",
+            };
 
 
+            RichTextBoxTarget target = new RichTextBoxTarget();
+            target.Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}] ${message}";           
+            target.ControlName = "richTextBox1";
+            target.FormName = "Form1";
+            target.UseDefaultRowColoringRules = true;
 
 
-
+            config.AddRule(LogLevel.Trace, LogLevel.Fatal, fileTarget);
+            config.AddRule(LogLevel.Trace, LogLevel.Info, target);
+            LogManager.Configuration = config;
+        }
+    }
+}
+```
 
