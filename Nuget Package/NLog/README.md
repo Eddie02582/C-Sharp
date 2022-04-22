@@ -298,25 +298,20 @@ using NLog.Windows.Forms;
 
 namespace NLog
 {
-    class Program
-    {
-        private static void Main(string[] args)
-        {
-            CreateLogger();
 
-            Logger logger = LogManager.GetCurrentClassLogger();
-           
-            logger.Trace("Trace");
-            logger.Debug("Debug");
-            logger.Info("Info");
-            logger.Warn("Warn");
-            logger.Error("Error");
-            logger.Fatal("Fatal");       
+    public partial class Form1 : Form
+    {
+        Logger logger = null;
+        public Form1()
+        {
+            InitializeComponent();
+            CreateLogger();
             
         }
-
+        
         private static void CreateLogger()
         {
+            logger = LogManager.GetCurrentClassLogger();
             var config = new LoggingConfiguration();
             var fileTarget = new FileTarget
             {
@@ -335,8 +330,16 @@ namespace NLog
             config.AddRule(LogLevel.Trace, LogLevel.Fatal, fileTarget);
             config.AddRule(LogLevel.Trace, LogLevel.Info, target);
             LogManager.Configuration = config;
+            
+                        logger.Trace("Trace");
+            logger.Debug("Debug");
+            logger.Info("Info");
+            logger.Warn("Warn");
+            logger.Error("Error");
+            logger.Fatal("Fatal");      
         }
     }
+  
 }
 ```
 
