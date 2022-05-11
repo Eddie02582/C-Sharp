@@ -135,14 +135,30 @@ namespace AutoNamespace
 
         public static void printScreen(string pathFile)
         {
-            Image I; 
-            Graphics G;
-            I = new Bitmap(Screen.PrimaryScreen.Bounds.Size.Width, Screen.PrimaryScreen.Bounds.Size.Height);
-            G = Graphics.FromImage(I);
+            Image I = new Bitmap(Screen.PrimaryScreen.Bounds.Size.Width, Screen.PrimaryScreen.Bounds.Size.Height);
+            Graphics G = Graphics.FromImage(I);        
             G.CopyFromScreen(new Point(0, 0), new Point(0, 0), new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height), CopyPixelOperation.SourceCopy);
-            //G.CopyFromScreen(0, 0, 0, 0, Screen.PrimaryScreen.Bounds.Size);
-            I.Save(pathFile, ImageFormat.Jpeg);       
+            //G.CopyFromScreen(0, 0, 0, 0, Screen.PrimaryScreen.Bounds.Size);//注意：鼠标是不被捕捉的。G.Save();
+            I.Save(pathFile);  
+        }
+        
+        public static void CaptureWindow(string processName,string pathFile)
+        {
+            /* 取得目標視窗的 Handle
+             * 需要加上 using System.Diagnostics;
+             */
+            Process[] process = Process.GetProcessesByName(processName);
 
+            /* 取得該視窗的大小與位置 */
+            Rectangle bounds = new Rectangle();
+            GetWindowRect(process[0].MainWindowHandle, ref bounds);
+
+            ///* 抓取截圖 */
+            Bitmap screenshot = new Bitmap(bounds.Width, bounds.Height, PixelFormat.Format32bppArgb);
+            Graphics gfx = Graphics.FromImage(screenshot);
+            gfx.CopyFromScreen(bounds.X, bounds.Y, 0, 0, bounds.Size, CopyPixelOperation.SourceCopy);
+            screenshot.Save(pathFile, ImageFormat.Jpeg); 
+        
         }
 
 
