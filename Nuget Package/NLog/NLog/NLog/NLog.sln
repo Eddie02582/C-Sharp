@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog", "NLog\NLog.csproj", "{0CBA163D-4074-4F94-B73A-CFB02F5E4E57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog example2", "NLog example2\NLog example2.csproj", "{32BA7294-5FE4-4A21-8799-245E41E7A39C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog Form", "Nlog with ritchbox\NLog Form.csproj", "{671C534C-8A28-49CE-AFC5-56B3483AFA64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog Muility Output", "NLog Muility Output\NLog Muility Output.csproj", "{54D55DB1-BD7C-4FB7-8FB1-7522D0A99F46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog Muility Output(Factory)", "NLog Muility Output(Factory)\NLog Muility Output(Factory).csproj", "{DB698864-3682-4AD5-9641-DBD6B36D5FD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CBA163D-4074-4F94-B73A-CFB02F5E4E57}.Debug|x86.ActiveCfg = Debug|x86
+		{0CBA163D-4074-4F94-B73A-CFB02F5E4E57}.Debug|x86.Build.0 = Debug|x86
+		{0CBA163D-4074-4F94-B73A-CFB02F5E4E57}.Release|x86.ActiveCfg = Release|x86
+		{0CBA163D-4074-4F94-B73A-CFB02F5E4E57}.Release|x86.Build.0 = Release|x86
+		{32BA7294-5FE4-4A21-8799-245E41E7A39C}.Debug|x86.ActiveCfg = Debug|x86
+		{32BA7294-5FE4-4A21-8799-245E41E7A39C}.Debug|x86.Build.0 = Debug|x86
+		{32BA7294-5FE4-4A21-8799-245E41E7A39C}.Release|x86.ActiveCfg = Release|x86
+		{32BA7294-5FE4-4A21-8799-245E41E7A39C}.Release|x86.Build.0 = Release|x86
+		{671C534C-8A28-49CE-AFC5-56B3483AFA64}.Debug|x86.ActiveCfg = Debug|x86
+		{671C534C-8A28-49CE-AFC5-56B3483AFA64}.Debug|x86.Build.0 = Debug|x86
+		{671C534C-8A28-49CE-AFC5-56B3483AFA64}.Release|x86.ActiveCfg = Release|x86
+		{671C534C-8A28-49CE-AFC5-56B3483AFA64}.Release|x86.Build.0 = Release|x86
+		{54D55DB1-BD7C-4FB7-8FB1-7522D0A99F46}.Debug|x86.ActiveCfg = Debug|x86
+		{54D55DB1-BD7C-4FB7-8FB1-7522D0A99F46}.Debug|x86.Build.0 = Debug|x86
+		{54D55DB1-BD7C-4FB7-8FB1-7522D0A99F46}.Release|x86.ActiveCfg = Release|x86
+		{54D55DB1-BD7C-4FB7-8FB1-7522D0A99F46}.Release|x86.Build.0 = Release|x86
+		{DB698864-3682-4AD5-9641-DBD6B36D5FD1}.Debug|x86.ActiveCfg = Debug|x86
+		{DB698864-3682-4AD5-9641-DBD6B36D5FD1}.Debug|x86.Build.0 = Debug|x86
+		{DB698864-3682-4AD5-9641-DBD6B36D5FD1}.Release|x86.ActiveCfg = Release|x86
+		{DB698864-3682-4AD5-9641-DBD6B36D5FD1}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

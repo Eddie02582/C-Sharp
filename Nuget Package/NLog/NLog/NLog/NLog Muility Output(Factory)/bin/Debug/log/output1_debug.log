@@ -1,0 +1,11 @@
+2022-06-07 14:35:46 [DEBUG] output1 => 1
+2022-06-07 14:35:46 [INFO] output1 => Hellow
+2022-06-07 14:35:46 [DEBUG] output1 => World
+2022-06-07 14:36:08 [DEBUG] output1 => ttt
+2022-06-07 14:36:46 [DEBUG] output1 => 1
+2022-06-07 14:36:46 [INFO] output1 => Hellow
+2022-06-07 14:36:46 [DEBUG] output1 => World
+2022-06-07 14:36:47 [DEBUG] output1 => ttt
+2022-06-07 14:36:56 [DEBUG] output1 => 1
+2022-06-07 14:36:56 [INFO] output1 => Hellow
+2022-06-07 14:36:56 [DEBUG] output1 => World

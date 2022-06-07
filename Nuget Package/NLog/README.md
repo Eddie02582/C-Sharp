@@ -9,11 +9,15 @@
 nuget.exe install NLog
 ```
 
-## 設定NLog.config
+## 使用NLog.config
 ```
 nuget.exe install NLog.Config
 ```
-安裝後會產生一個NLog.config,將NLog.config放置執行目錄,設定可以<a href = "https://github.com/nlog/nlog/wiki/Configuration-file">參考</a>
+安裝後會產生一個NLog.config,將NLog.config放置執行目錄,可以參考
+<a href = "https://github.com/nlog/nlog/wiki/Configuration-file">Link1</a>
+<a href = "https://github.com/NLog/NLog/tree/dev/examples/targets/Configuration%20File">Link2</a>
+
+
 
 原始內容如下,主要分兩部分
 <ul>
@@ -183,16 +187,17 @@ namespace NLog
     {
         private static void Main(string[] args)
         {
-            //CreateLogger();
-
-            Logger logger = LogManager.GetCurrentClassLogger();
-           
+            Logger logger = LogManager.GetCurrentClassLogger();           
             logger.Trace("Trace");
             logger.Debug("Debug");
             logger.Info("Info");
             logger.Warn("Warn");
             logger.Error("Error");
             logger.Fatal("Fatal");
+
+            logger.Warn("Hello World");
+            logger.Warn("Example 1");
+            logger.Debug("log1");
         }
     }
 }
@@ -204,31 +209,33 @@ namespace NLog
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.nlog-project.org/schemas/NLog.xsd NLog.xsd"
       autoReload="true"
-      throwExceptions="false"
-      internalLogLevel="Off" internalLogFile="c:\temp\nlog-internal.log">
+      throwExceptions="false">
 
-  <variable name="myvar" value="myvalue"/>
+  <variable name="myvar" value="myvalue"/> 
   <targets>
-    <target xsi:type="File" name="fileTarget" fileName="${basedir}/logs/${shortdate}.log"
-            layout="${longdate} ${uppercase:${level}} ${message}"    
-            />
-    <target name="consoleTarget"
-            xsi:type="Console" 
-            layout="${longdate} [${uppercase:${level}}] ${message}" />            
+  
+    <target name="fileTarget"  xsi:type="File" fileName="${basedir}/logs/${shortdate}.log"
+            layout="${longdate} ${uppercase:${level}} ${message}"/>
+     
+    <target name="consoleTarget" xsi:type="ColoredConsole" layout="${date:format=yyyy-MM-dd HH\:mm\:ss} [${uppercase:${level}}] ${message}">  
+        <highlight-word foregroundColor="Green" regex="Hello World"/>   
+        <highlight-word text="log" backgroundColor="DarkGreen" />       
+        <highlight-row condition="level == LogLevel.Info" foregroundColor="NoChange" />
+        <highlight-row condition="level == LogLevel.Warn" foregroundColor="Yellow" />
+        <highlight-row condition="level == LogLevel.Error" foregroundColor="NoChange" backgroundColor="DarkRed" />  
+    </target>    
   </targets>
+
   <rules>
         <logger name="*" minlevel="Trace" maxlevel = "Info" writeTo="fileTarget"/> 
-        <logger name="*" levels="Info" writeTo="consoleTarget" />
+        <logger name="*" minlevel="Trace" writeTo="consoleTarget" />
   </rules>
 </nlog>
-
 ```
 
 
 
-## 不使用NLog.Config
-也可以不使用NLog.Config
-
+## 在程式裡面設定
 
 ```csharp
 using System;
@@ -246,9 +253,7 @@ namespace NLog
         private static void Main(string[] args)
         {
             CreateLogger();
-
-            Logger logger = LogManager.GetCurrentClassLogger();
-           
+            Logger logger = LogManager.GetCurrentClassLogger();           
             logger.Trace("Trace");
             logger.Debug("Debug");
             logger.Info("Info");
@@ -264,16 +269,27 @@ namespace NLog
             var fileTarget = new FileTarget
             {
                 FileName = "${basedir}/logs/${shortdate}.log",
-                Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}] ${message}",
+                Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}][Test] ${message}",
             };
 
-            var consoleTarget = new ConsoleTarget
+            var consoleTarget = new ColoredConsoleTarget
             {
-                Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}] ${message}",
+                Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}] ${message}",             
             };
 
+            consoleTarget.WordHighlightingRules.Add(
+               new ConsoleWordHighlightingRule("Hello World",
+                   ConsoleOutputColor.NoChange,
+                   ConsoleOutputColor.DarkGreen));
+
+            consoleTarget.RowHighlightingRules.Add(
+                    new ConsoleRowHighlightingRule("level == LogLevel.Warn", ConsoleOutputColor.Yellow, ConsoleOutputColor.NoChange)
+                );
+
+
+            //設定config level
             config.AddRule(LogLevel.Trace, LogLevel.Fatal, fileTarget);
-            config.AddRule(LogLevel.Trace, LogLevel.Info, consoleTarget);
+            config.AddRule(LogLevel.Trace, LogLevel.Warn, consoleTarget);
             LogManager.Configuration = config;
         }
     }
@@ -286,6 +302,53 @@ namespace NLog
 nuget.exe install NLog.Windows.Forms
 ```
 
+這邊注意初始化log 不能放在Form1
+```csharp
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Nlog_with_ritchbox
+{
+    public partial class Form1 : Form
+    {
+        Log log =null;
+        public Form1()
+        {
+            InitializeComponent();            
+        }
+
+      
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            log.logger.Trace("trace log message");
+            log.logger.Debug("debug log message");
+            log.logger.Info("info log message");
+            log.logger.Warn("warn log message");
+            log.logger.Error("error log message");
+            log.logger.Fatal("fatal log message");
+           
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            log = new Log("");
+
+        }
+    }
+   
+}
+
+```
+
+Log.cs
+
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -295,51 +358,223 @@ using NLog;
 using NLog.Config;
 using NLog.Targets;
 using NLog.Windows.Forms;
+using System.Threading;
 
-namespace NLog
+namespace Nlog_with_ritchbox
 {
-
-    public partial class Form1 : Form
+    class Log
     {
-        Logger logger = null;
-        public Form1()
+        public Log(string logpath)
         {
-            InitializeComponent();
+            this.logpath = logpath;
             CreateLogger();
-            
         }
-        
-        private static void CreateLogger()
+        private string logpath;
+        private Logger _logger = null;
+        public Logger logger
         {
-            logger = LogManager.GetCurrentClassLogger();
-            var config = new LoggingConfiguration();
-            var fileTarget = new FileTarget
+            get
             {
-                FileName = "${basedir}/logs/${shortdate}.log",
-                Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}] ${message}",
-            };
-
+                return _logger;
+            }
+        }
+        private void CreateLogger()
+        {
+            _logger = LogManager.GetCurrentClassLogger();
+            string date = DateTime.Now.ToString("yyyy_MM_dd HH_mm_ss");
 
             RichTextBoxTarget target = new RichTextBoxTarget();
-            target.Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}] ${message}";           
+            target.Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}] ${message}";
             target.ControlName = "richTextBox1";
+            //target.ControlName = "richTextBox1";
             target.FormName = "Form1";
             target.UseDefaultRowColoringRules = true;
 
+            var fileTarget = new FileTarget
+            {
+                FileName = logpath + "\\log.log",
+                Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}] ${message}",
+            };
 
-            config.AddRule(LogLevel.Trace, LogLevel.Fatal, fileTarget);
-            config.AddRule(LogLevel.Trace, LogLevel.Info, target);
+            var config = new LoggingConfiguration();
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, target);  
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, fileTarget);
             LogManager.Configuration = config;
-            
-                        logger.Trace("Trace");
-            logger.Debug("Debug");
-            logger.Info("Info");
-            logger.Warn("Warn");
-            logger.Error("Error");
-            logger.Fatal("Fatal");      
+
         }
     }
-  
 }
 ```
+
+
+## NLog with Muility Output
+這邊想將特定log 輸出到特定log,但是由於LogManager.Configuration屬於靜態的,一種方法可以將包起來每次輸出時在設定
+
+Log.cs
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
+using System.Threading;
+
+namespace NLog_Muility_Output
+{
+    class Log
+    {
+
+        public Log(string logpath,string name)
+        {
+            this.logpath = logpath;
+            this.name = name;
+            _logger = LogManager.GetLogger(name); ;
+            CreateConfig();
+        }
+
+        private string logpath;
+        private string name;
+        private Logger _logger = null;
+        private LoggingConfiguration config = new LoggingConfiguration();
+        public Logger logger
+        {
+            get
+            {
+                return _logger;
+            }
+        }
+
+      
+        private void CreateConfig()
+        {
+            _logger = LogManager.GetLogger(name); ;
+            string date = DateTime.Now.ToString("yyyy_MM_dd HH_mm_ss");       
+
+            var logFileTarget = new FileTarget
+            {               
+                //使用string format會有問題
+                //FileName = string.Format("{0}\\{1}_log.log",logpath,name),   
+                FileName = logpath + "\\" + name + "_log.log",
+                Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}] ${message}",
+            };
+            var consoleTarget = new ConsoleTarget
+            {
+                Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss}[${logger}] [${uppercase:${level}}] ${message}",   
+            };          
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, logFileTarget);       
+            config.AddRule(LogLevel.Trace, LogLevel.Fatal, consoleTarget);  
+        }
+
+        //因為LogManager.Configuration為static 所以共用,當輸出時需要再設定一次        
+        public void Debug(string message)
+        {
+            LogManager.Configuration = config;
+            _logger.Debug(message);
+        }
+
+        public void Info(string message)
+        {
+            LogManager.Configuration = config;
+            _logger.Info(message);
+        }
+    }
+}
+```
+
+而真正上使用Factory 
+
+Log.cs
+```csharp
+namespace NLog_Muility_Output_Factory_
+{
+    class Log
+    {
+        public Log(string logpath,string name)
+        {
+            this.logpath = logpath;
+            this.name = name;
+            CreateLogger(); 
+        }
+        private string logpath;
+        private Logger _logger = null;
+        private string name = "";       
+        public  Logger logger
+        {
+            get
+            {
+                return _logger;
+            }
+        }
+        
+        private void CreateLogger()
+        {     
+
+            var fileTarget = new FileTarget
+            {
+                FileName = logpath + "\\" + name + "_log.log",
+                Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} [${uppercase:${level}}] ${message}",
+            };          
+
+            var consoleTarget = new ConsoleTarget();
+            //用來區分console輸出格式
+            if(name != "")
+            {
+                consoleTarget.Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss}[${logger}] [${uppercase:${level}}] ${message}";
+            }
+            else{
+                consoleTarget.Layout = "${date:format=yyyy-MM-dd HH\\:mm\\:ss}[${uppercase:${level}}] ${message}";
+            }       
+
+            var config = new LoggingConfiguration();         
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, fileTarget);
+            config.AddRule(LogLevel.Trace, LogLevel.Fatal, debugfileTarget);
+            config.AddRule(LogLevel.Trace, LogLevel.Fatal, consoleTarget);  
+
+            LogFactory Factory1 = new LogFactory(config);
+            _logger = Factory1.GetLogger(name);
+            //or use
+            //_logger = Factory1.GetCurrentClassLogger();        
+            
+        }      
+    }
+}
+```
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace NLog_Muility_Output_Factory_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Log log1 = new Log("log", "output1");
+            Log log2 = new Log("log", "output2");
+            log1.logger.Debug("output1 => 1");
+            log2.logger.Debug("output2 => ttt");
+            log1.logger.Info("output1 => Hellow");
+            log2.logger.Info("output2 =>2");
+            log1.logger.Debug("output1 => World");
+            log2.logger.Info("output2 =>3");
+            log1.logger.Debug("output1 => ttt");
+
+        }
+    }
+}
+```
+
+
+
+
+
+
+
+
+
 

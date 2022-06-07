@@ -1,0 +1,6 @@
+D:\02582\Desktop\NLog\NLog\NLog Muility Output\bin\Debug\NLog Muility Output.exe
+D:\02582\Desktop\NLog\NLog\NLog Muility Output\bin\Debug\NLog Muility Output.pdb
+D:\02582\Desktop\NLog\NLog\NLog Muility Output\bin\Debug\NLog.dll
+D:\02582\Desktop\NLog\NLog\NLog Muility Output\obj\x86\Debug\NLog Muility Output.csprojResolveAssemblyReference.cache
+D:\02582\Desktop\NLog\NLog\NLog Muility Output\obj\x86\Debug\NLog Muility Output.exe
+D:\02582\Desktop\NLog\NLog\NLog Muility Output\obj\x86\Debug\NLog Muility Output.pdb

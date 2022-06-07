@@ -1,0 +1,6 @@
+D:\02582\Desktop\NLog\NLog\NLog\bin\Debug\NLog.exe
+D:\02582\Desktop\NLog\NLog\NLog\bin\Debug\NLog.pdb
+D:\02582\Desktop\NLog\NLog\NLog\bin\Debug\NLog.dll
+D:\02582\Desktop\NLog\NLog\NLog\obj\x86\Debug\NLog.csprojResolveAssemblyReference.cache
+D:\02582\Desktop\NLog\NLog\NLog\obj\x86\Debug\NLog.exe
+D:\02582\Desktop\NLog\NLog\NLog\obj\x86\Debug\NLog.pdb

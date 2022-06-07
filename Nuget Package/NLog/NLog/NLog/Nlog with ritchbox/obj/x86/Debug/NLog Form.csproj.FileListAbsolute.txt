@@ -1,0 +1,10 @@
+D:\02582\Desktop\NLog\NLog\Nlog with ritchbox\bin\Debug\Nlog with ritchbox.exe
+D:\02582\Desktop\NLog\NLog\Nlog with ritchbox\bin\Debug\Nlog with ritchbox.pdb
+D:\02582\Desktop\NLog\NLog\Nlog with ritchbox\bin\Debug\NLog.dll
+D:\02582\Desktop\NLog\NLog\Nlog with ritchbox\bin\Debug\NLog.Windows.Forms.dll
+D:\02582\Desktop\NLog\NLog\Nlog with ritchbox\obj\x86\Debug\NLog Form.csprojResolveAssemblyReference.cache
+D:\02582\Desktop\NLog\NLog\Nlog with ritchbox\obj\x86\Debug\Nlog_with_ritchbox.Form1.resources
+D:\02582\Desktop\NLog\NLog\Nlog with ritchbox\obj\x86\Debug\Nlog_with_ritchbox.Properties.Resources.resources
+D:\02582\Desktop\NLog\NLog\Nlog with ritchbox\obj\x86\Debug\NLog Form.csproj.GenerateResource.Cache
+D:\02582\Desktop\NLog\NLog\Nlog with ritchbox\obj\x86\Debug\Nlog with ritchbox.exe
+D:\02582\Desktop\NLog\NLog\Nlog with ritchbox\obj\x86\Debug\Nlog with ritchbox.pdb

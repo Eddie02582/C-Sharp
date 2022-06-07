@@ -1,0 +1,10 @@
+2022-06-07 13:34:19 [INFO][Test] Info
+2022-06-07 13:34:19 [WARN][Test] Warn
+2022-06-07 13:34:19 [ERROR][Test] Error
+2022-06-07 13:34:19 [FATAL][Test] Fatal
+2022-06-07 13:34:19 [INFO][Test]  Hello World 123
+2022-06-07 13:36:03 [INFO][Test] Info
+2022-06-07 13:36:04 [WARN][Test] Warn
+2022-06-07 13:36:04 [ERROR][Test] Error
+2022-06-07 13:36:04 [FATAL][Test] Fatal
+2022-06-07 13:36:04 [INFO][Test]  Hello World 123
