@@ -15,13 +15,13 @@ thread.Start();
 此方法只適用一個參數,且參數型別必須為object,假設函數如下
 
 ```csharp
-    public void T(object n)
+public void T(object n)
+{
+    for (int i = 0; i < (int)n; i++)
     {
-        for (int i = 0; i < (int)n; i++)
-        {
-            Console.WriteLine("Thread");
-        }
+        Console.WriteLine("Thread");
     }
+}
 ```
 
 使用時只要將參數傳入Start裡面即可
@@ -33,18 +33,18 @@ thread.Start(5);
 ### method2
 假設函數如下
 ```csharp
-    public void T(int start,int end)
+public void T(int start,int end)
+{
+    for (int i = start; i < end; i++)
     {
-        for (int i = start; i < end; i++)
-        {
-            Console.WriteLine(i.ToString(););
-        }
+        Console.WriteLine(i.ToString(););
     }
+}
 ```
 使用下面方法
 
 ```csharp
-Thread thread = new Thread(() => p.T(5,8));
+Thread thread = new Thread(() => T(5,8));
 thread.Start();
 ```
 或是透過delegate
