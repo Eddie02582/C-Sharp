@@ -20,10 +20,10 @@ thread.Start(5);
 ```
 
 ### With One/More Parameter
-假設有一個函數T(n1,n2)
+假設有一個函數T(int n1,int n2)
 
 
-可以使用以下方法
+可以使用以下方法Lambda/delegate/ThreadStart
 
 
 ```csharp
